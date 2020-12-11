@@ -1,4 +1,9 @@
 package com.company;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 /*
 MakeBricks :: CodingBat.com
 
@@ -13,7 +18,6 @@ makeBricks(3, 1, 9) → false
 makeBricks(3, 2, 10) → true
  */
 public class Main {
-//TODO: Add unit testing
     public static void main(String[] args) {
         System.out.println("Expected Result: true; Actual Result: " + makeBricks(3, 1, 8)); // true
         System.out.println("Expected Result: false; Actual Result: " + makeBricks(3, 1, 9)); // false
@@ -21,7 +25,7 @@ public class Main {
     }
 
     public static boolean makeBricks(int small, int big, int goal) {
-  /********************************************************************
+  /*
     Here's what we know about the problem:
 
     -We need to have enough bricks (small and/or big) to make our goal size
@@ -32,13 +36,13 @@ public class Main {
       - if yes, then check if we can meet or exceed goal by combining small (goal /5) * 5 + small >= goal
       - Otherwise, check if we can make do with what we have (big*5 + small >= goal)
 
-  ** Solution (See implementation) **
+   Solution (See implementation) **
 
   // One-line solution:
         return small < goal ? big >= (goal / 5) ?
                 ((goal / 5) * 5) + small >= goal : ((big * 5) + small) >= goal:
                 true;
- ***************************************************************/
+*/
         if (small < goal){
             // Check if we have enough big bricks for the goal
             if (big >= (goal / 5)){
@@ -51,5 +55,7 @@ public class Main {
         // if we made it here, it's because we have enough for goal with small bricks
         return true;
     }
+
+
 
 }
